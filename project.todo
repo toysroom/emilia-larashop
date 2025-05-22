@@ -5,6 +5,7 @@ CREAZIONE AMBIENTE DOCKER:
     ☐ docker compose up da terminale 
     ☐ creare nuovo progetto
     ☐ aggiungere autenticazione (admin, customer) 
+    Creazione models (categories, products, users, orders, orderItems)
     ☐ pannello di admin (aggiungere categorie/prodotti, gestire ordini)
     ☐ api x customer
 
