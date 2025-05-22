@@ -1,0 +1,12 @@
+PROGETTO LARA-SHOP
+CREAZIONE AMBIENTE DOCKER:
+    ☐ docker-compose.yml
+    ☐ Dockerfile e entrypoint.sh
+    ☐ docker compose up da terminale 
+    ☐ creare nuovo progetto
+    ☐ aggiungere autenticazione (admin, customer) 
+    ☐ pannello di admin (aggiungere categorie/prodotti, gestire ordini)
+    ☐ api x customer
+
+
+FRONTEND REACT:

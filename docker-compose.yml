@@ -1,0 +1,29 @@
+services:
+  mariadb:
+    container_name: larashop-db
+    image: mariadb:11.7.2
+    ports:
+      - 5005:3306
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=1234
+
+  phpmyadmin:
+    container_name: larashop-phpmyadmin
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8090:80
+    environment:
+      - PMA_ARBITRARY=1
+
+  backend:
+    container_name: larashop-backend
+    image: larashop-backend:v1
+    build:
+      context: ./
+    ports:
+      - 8000:8000
+    volumes:
+      - ./larashop-backend:/var/www/html
