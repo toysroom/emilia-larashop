@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use Carbon\Carbon;
 
 class AppLayout extends Component
 {
@@ -12,6 +13,7 @@ class AppLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.app');
+        $data = Carbon::now()->format("d/m/Y H:i:s");
+        return view('layouts.app', compact('data'));
     }
 }

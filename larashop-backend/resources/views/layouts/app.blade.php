@@ -15,6 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        {{ $data }}
         <div class="min-h-screen bg-gray-100">
             <livewire:layout.navigation />
 
@@ -31,6 +32,12 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <footer>
+                @if (isset($footer))
+                    <h1>{{ $footer }}</h1>
+                @endif
+            </footer>
         </div>
     </body>
 </html>
