@@ -48,4 +48,10 @@ class CategoryService {
         return $category->delete();
     }
 
+
+    public function getTotalCategories()
+    {
+        return Category::count();
+    }
+
 }

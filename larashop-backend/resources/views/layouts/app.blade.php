@@ -15,7 +15,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        {{ $data }}
         <div class="min-h-screen bg-gray-100">
             <livewire:layout.navigation />
 
@@ -34,9 +33,7 @@
             </main>
 
             <footer>
-                @if (isset($footer))
-                    <h1>{{ $footer }}</h1>
-                @endif
+                <h6 class="text-center text-sm">Data e ora correnti: {{ $data }}</h6>
             </footer>
         </div>
     </body>

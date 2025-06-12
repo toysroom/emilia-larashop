@@ -50,4 +50,9 @@ class ProductService {
     {
         return Product::with('category')->where('category_id', $category->id)->get();
     }
+
+    public function getTotalProducts()
+    {
+        return Product::count();
+    }
 }

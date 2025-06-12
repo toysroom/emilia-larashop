@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function() {
@@ -10,8 +11,7 @@ Route::get('/', function() {
 
 Route::middleware(['auth'])->group( function() {
     
-    Route::view('dashboard', 'dashboard')
-        ->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::view('profile', 'profile')
         ->name('profile');
