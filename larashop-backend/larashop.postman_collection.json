@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "01d98f61-e6d2-4f7c-9215-8392abbab60f",
+		"name": "larashop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "545892"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id} - 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/{id} - 404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/categories/20000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"20000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id} - 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/16",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id} - 404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/20000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"20000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/category/{category_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/category/11",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

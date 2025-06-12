@@ -3,16 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
+use App\Services\CategoryService;
 use App\Models\Category;
 
 class CategoryController extends Controller
 {
+
+    private CategoryService $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = $this->categoryService->getAllOrderByName();
         return view('categories.index', compact('categories'));
     }
 
@@ -29,11 +38,7 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $category = new Category();
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->save();
-
+        $this->categoryService->insert($request->name, $request->description);
         return redirect()->route('categories.index')->with('success', 'categoria creata con successo');
     }
 
@@ -58,10 +63,7 @@ class CategoryController extends Controller
      */
     public function update(CategoryRequest $request, Category $category)
     {
-        $category->name = $request->name;
-        $category->description = $request->description;
-        $category->save();
-
+        $this->categoryService->update($category, $request->name, $request->description);
         return redirect()->route('categories.index')->with('success', 'categoria modificata con successo');
     }
 
@@ -70,7 +72,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->delete();
+        $this->categoryService->delete($category);
         return redirect()->route('categories.index')->with('success', 'categoria cancellata con successo');
     }
 }
