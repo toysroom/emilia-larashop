@@ -7,7 +7,6 @@ use App\Models\Category;
 
 class CategoryService {
 
-
     public function getAllOrderByName() 
     {
         return Category::orderBy('name')->get();
